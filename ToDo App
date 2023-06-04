@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+    internal class Task
+    {
+        string Name { get; set; }
+
+        public void PrintTask(string Name)
+        {
+        Name = "omar";
+        }
+    public void Showdetails()
+    {
+        Console.WriteLine("Name");
+    }
+    }
+    
+    
+    \\\
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ToDo_Apps
+{
+    static class TaskManagers
+    {
+        public static class TaskManager
+        {
+            private static List<Task> tasks = new List<Task>();
+
+            public static void AddTask(Task task)
+            {
+                tasks.Add(task);
+            }
+
+            public static void DeleteTask(Task task)
+            {
+                tasks.Remove(task);
+            }
+
+            public static void SearchForTask(Task task)
+            {
+                int index = tasks.IndexOf(task);
+                if (index > -1)
+                {
+                    Console.WriteLine($"Task found at index {index}.");
+                }
+                else
+                {
+                    Console.WriteLine("Task not found.");
+                }
+            }
+        }
+    }
+}
+
+
+class program
+
+// See https://aka.ms/new-console-template for more information
+using static ToDo_Apps.TaskManagers;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+Console.WriteLine("Hello, World!");
+
+Task task1 = new Task();
+Task task2 = new Task();
+Task task3 = new Task();
+task1.PrintTask("omar");
+task1.Showdetails();
+Console.ReadLine();
+
+TaskManager.AddTask(task1);
+TaskManager.AddTask(task2);
+TaskManager.AddTask(task3);
+TaskManager.SearchForTask(task1);
+task1.PrintTask("omar");
+TaskManager.DeleteTask(task3);
+    
